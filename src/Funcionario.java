@@ -89,4 +89,6 @@ public class Funcionario {
                "Idade: " + this.idade + "\n" +
                "Salario: " + this.salario;
     }
+	//Essa classe representa um  Funcionario
 }
+
