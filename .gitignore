@@ -28,3 +28,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Configurações locais do IntelliJ IDEA
+.idea/
+*.iml
