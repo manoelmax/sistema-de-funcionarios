@@ -7,23 +7,33 @@ public class Main {
 
 
 
-        ArrayList<Funcionario> funcionario = new ArrayList<>();
+        ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
-        Funcionario f = new Funcionario(1, "Max", 35, 5000 );
+        Funcionario f1 = new Funcionario(1, "Max", 35, 5000 );
+        funcionarios.add(f1);
+        Funcionario f2 = new Funcionario(2, "Ana", 28, 4200);
+        funcionarios.add(f2);
+
+
 
         try{
-            f.aumentarSalario(10);
+            f1.aumentarSalario(0);
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
 
         try{
-            f.setSalario(-1000);
+            f1.setSalario(-1000);
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
 
-        System.out.println(f.getSalario());
+
         System.out.println("Programa Finalizado!");
+
+        for (Funcionario funcionario : funcionarios){
+            System.out.println(funcionario);
+        }
+
     }
 }
