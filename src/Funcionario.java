@@ -58,8 +58,8 @@ public class Funcionario {
 
     public void setSalario(double salario){
         if (salario <= 0 || !Double.isFinite(salario)){
-            throw new IllegalArgumentException(
-                    "O salario deve ser maior que zero e finito!"
+            throw new SalarioInvalidoException(
+                    "Salario inválido exception!"
             );
         }
         this.salario = salario;
@@ -67,17 +67,17 @@ public class Funcionario {
 
     public void aumentarSalario(double porcentagem) {
 
-        if (porcentagem <= 0 || !Double.isFinite(porcentagem)){
-            throw new IllegalArgumentException(
-                    "Porcentagem tem que ser maior que zero, positiva e finita!"
+        while (porcentagem <= 0 || !Double.isFinite(porcentagem)){
+            throw new SalarioInvalidoException(
+                    "Porcentagem de aumento inválida, digite novamente!"
             );
         }
 
         double novoSalario = this.salario + (this.salario * (porcentagem / 100));
 
         if (!Double.isFinite(novoSalario)){
-            throw new IllegalArgumentException(
-                "O novo salario deve ser um valor finito"
+            throw new SalarioInvalidoException(
+                    "O salário calculado não é finito!"
             );
         }
         this.salario = novoSalario;
